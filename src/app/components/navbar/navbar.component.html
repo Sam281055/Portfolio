@@ -1,0 +1,12 @@
+<div class="w-10/12 mx-auto flex my-4">
+    <div class="w-1/2 flex justify-start">
+        <h3>LOGO</h3>
+    </div>
+    <div class="w-1/2 flex justify-end">
+        <div *ngFor="let item of Items">
+            <button (click)="Router(item.rout)" class="mx-3 font-semibold font-sans">{{item.title}}</button>
+        </div>
+
+        <app-language-selector [language]="language"/>
+    </div>
+</div>
