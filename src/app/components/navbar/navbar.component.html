@@ -1,4 +1,4 @@
-<div class="w-10/12 mx-auto flex my-4">
+<div class="w-10/12 mx-auto  my-4 hidden xl:flex md:flex sm:flex">
     <div class="w-1/2 flex justify-start">
         <h3 class="animate__animated animate__backInDown">LOGO</h3>
         <h1 class="animate__animated animate__backInDown px-5 font-semibold">Sam281055</h1>
@@ -9,5 +9,29 @@
         </div>
 
         <app-language-selector class="animate__animated animate__backInDown" [language]="language"/>
+    </div>
+</div>
+
+<div class="w-full my-4 flex xl:hidden md:hidden sm:hidden">
+    <div class="w-1/2 flex justify-start">
+        <h3 class="animate__animated animate__backInDown">LOGO</h3>
+        <h1 class="animate__animated animate__backInDown px-5 font-semibold">Sam281055</h1>
+    </div>
+    <div class="w-1/2 flex justify-end">
+        <button (click)="toggleModal()" class="bg-blue-500 text-white p-2 rounded">
+            Toggle Modal
+          </button>
+
+     
+    </div>
+
+    <div *ngIf="!isModal">
+        <div [ngClass]="{'animate__animated': isModal,'animate__backInRight': isModal,'flex': isModal,'absolute': isModal,'bg-white': isModal, 'hidden': !isModal}">
+            <div *ngFor="let item of Items">
+                <button (click)="Router(item.rout)" class="animate__animated animate__backInDown mx-3 font-semibold font-sans">{{item.title}}</button>
+            </div>
+    
+            <app-language-selector class="animate__animated animate__backInDown" [language]="language"/>
+        </div>
     </div>
 </div>

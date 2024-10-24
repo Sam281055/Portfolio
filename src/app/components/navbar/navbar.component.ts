@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
   @Input() language!: string;
   
   Items: itemNavbar[] = [];
+  isModal: boolean = false;
+
 
   constructor(
     private utilSvc:utilService
@@ -48,6 +50,12 @@ export class NavbarComponent implements OnInit {
     console.log("router");
     
     this.utilSvc.goRoute(rout);
+  }
+
+  toggleModal() {
+    this.isModal = !this.isModal;
+    console.log(this.isModal);
+    
   }
 
 }
