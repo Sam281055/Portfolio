@@ -1,12 +1,13 @@
 <div class="w-10/12 mx-auto flex my-4">
     <div class="w-1/2 flex justify-start">
-        <h3>LOGO</h3>
+        <h3 class="animate__animated animate__backInDown">LOGO</h3>
+        <h1 class="animate__animated animate__backInDown px-5 font-semibold">Sam281055</h1>
     </div>
     <div class="w-1/2 flex justify-end">
         <div *ngFor="let item of Items">
-            <button (click)="Router(item.rout)" class="mx-3 font-semibold font-sans">{{item.title}}</button>
+            <button (click)="Router(item.rout)" class="animate__animated animate__backInDown mx-3 font-semibold font-sans">{{item.title}}</button>
         </div>
 
-        <app-language-selector [language]="language"/>
+        <app-language-selector class="animate__animated animate__backInDown" [language]="language"/>
     </div>
 </div>

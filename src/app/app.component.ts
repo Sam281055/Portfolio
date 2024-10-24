@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { checkLanguageService } from './service/checkLanguage.service';
 import { RouterOutlet } from '@angular/router';
+import 'animate.css';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,7 +14,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements AfterViewInit, OnInit {
-  title = 'portfolio';
   language = '';
   constructor(
     private elementRef: ElementRef,
