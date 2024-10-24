@@ -16,7 +16,6 @@ import 'animate.css';
 export class AppComponent implements AfterViewInit, OnInit {
   language = '';
   constructor(
-    private elementRef: ElementRef,
     private checkLanguage:checkLanguageService
 
   ) {}
@@ -26,11 +25,13 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
   
   ngAfterViewInit() {
-    const container = this.elementRef.nativeElement.querySelector('#react');
-    const projects = this.elementRef.nativeElement.querySelector('#react-project');
-    ReactDOM.createPortal(ProjectDashboard(), container);
-    ReactDOM.render(ProjectCard({title:'Projectos', description:'Descripcion', link:'Link'}), projects);
+  
+    
+ 
   }
+
+
+ 
 
 
 
