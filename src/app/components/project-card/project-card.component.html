@@ -1,12 +1,36 @@
-<div class="w-10/12 mx-auto border">
-    <div class="flex h-[80vh]">
-        <div class="w-1/2 flex flex-col">
-            <p class="text-xl ml-10 mt-6">{{projectNumber}}</p>
-            <h4 class="text-2xl ml-10 mt-2">{{title}}</h4>
-        </div>
-        <div class="w-1/2 flex flex-col">
-            <button class="rounded-md px-10 py-2 border">{{btnTxt}}</button>
-        </div>
-
+<div
+  class="w-10/12 mx-auto border h-[85vh] animate__animated animate__fadeInDown"
+>
+  <div class="flex">
+    <div class="w-1/2 flex flex-col text-start">
+      <p class="text-2xl ml-10 mt-4">{{ projectNumber }}</p>
+      <h4 class="text-4xl ml-10 my-1">{{ title }}</h4>
     </div>
+    <div class="w-1/2 flex flex-col">
+      <div class="flex justify-end mt-4">
+        <button
+          class="rounded-full px-10 mx-2 py-1 border bg-slate-100 hover:bg-slate-50"
+        >
+          {{ btnTxt }}
+        </button>
+        <button
+          class="rounded-full px-10 mx-2 py-1 border bg-slate-100 hover:bg-slate-50"
+        >
+          {{ btnTxt2 }}
+        </button>
+      </div>
+      <p class="text-xl my-2 mr-5 flex justify-end">
+        {{ description }}
+      </p>
+    </div>
+  </div>
+  <div class="w-11/12 mx-auto my-auto">
+    <a href="{{ link }}" target="_blank" class="mb-10">
+      <img
+        src="{{ imgPath }}"
+        class="h-auto w-auto hover:brightness-75"
+        alt=""
+      />
+    </a>
+  </div>
 </div>

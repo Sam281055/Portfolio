@@ -6,8 +6,6 @@ export class checkLanguageService {
 
   check(): string {
     let language = window.localStorage.getItem('language') || 'EN';
-    console.log(language);
-
     if (!language) {
       language = 'EN';
     }

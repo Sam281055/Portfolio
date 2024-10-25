@@ -17,4 +17,5 @@ export class ProjectCardComponent {
   @Input() description!:string;
   @Input() link!:string;
   @Input() imgPath!:string;
+  
 }
