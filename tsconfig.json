@@ -3,7 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -12,23 +12,36 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "allowSyntheticDefaultImports":true,
+    "emitDecoratorMetadata":true,
+    "forceConsistentCasingInFileNames":true,
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@angular/*": ["../node_modules/@angular/*"],
+      "@react/*": ["../node_modules/react/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.jsx"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

@@ -16,18 +16,22 @@ const ProjectCard = ({
   btnTxt2,
 }: set) => {
   return (
-    <div className="w-10/12 mx-auto my-auto">
-      <div className="flex">
+    <div className="w-10/12 mx-auto my-auto h-[80vh] border rounded-md">
+      <div className="flex p-10">
         <div className="w-1/2">
           <h2 className="">{projectNumber}</h2>
-          <h2 className="text-2xl font-semibold">{title}</h2>
-        </div>
+          <h2 className="text-xl font-semibold">{title}</h2>
+        </div>  
         <div className="w-1/2 justify-end">
           <div className="flex mx-auto w-full justify-end">
-              <button className="bg-yellow-700 px-10 text-4xl rounded-[40px] border">
-                {btnTxt}
-              </button>
-            <button className="rounded-md mx-4">{btnTxt2}</button>
+            <button className="w-32 h-10 text-xl hover:bg-green-500 rounded-md border">
+
+              <p className="px-10 text-center">{btnTxt}</p>
+            </button>
+            <button className="w-32 h-10 text-xl hover:bg-green-500 ml-5 rounded-md border">
+
+              <p className="px-10 text-center">{btnTxt2}</p>
+            </button>
           </div>
           <p className="">{description}</p>
         </div>
@@ -39,6 +43,7 @@ const ProjectCard = ({
         </a>
       </div>
     </div>
+
   );
 };
 
