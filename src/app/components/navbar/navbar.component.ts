@@ -30,18 +30,16 @@ export class NavbarComponent implements OnInit {
   set(language:string){
     if(language === 'EN'){
       this.Items = [
-        {title: 'Work', rout:'/work'},
+        {title: 'Works', rout:'/work'},
         {title: 'About', rout:'/about'},
-        {title: 'Resume', rout:'/resume'},
-        {title: 'Projects', rout:'/projects'}
+        {title: 'Resume', rout:'/resume'}
       ]
     }
     else if(language === 'ES'){
       this.Items = [
-        {title: 'Experiencia', rout:'/work'},
+        {title: 'Proyectos', rout:'/work'},
         {title: 'Sobre mi', rout:'/about'},
-        {title: 'Resumen', rout:'/resume'},
-        {title: 'Projectos', rout:'/projects'}
+        {title: 'Resumen', rout:'/resume'}
       ]
     }
   }

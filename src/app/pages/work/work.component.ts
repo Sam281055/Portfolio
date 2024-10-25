@@ -46,14 +46,9 @@ export class WorkComponent implements OnInit, AfterViewInit {
     const container = this.elementRef.nativeElement.querySelector('#react');
     const projects = this.elementRef.nativeElement.querySelector('#react-project');
     this.reactSvc.renderReactComponent(container, ProjectDashboard());
-    this.reactSvc.renderReactComponent(projects, ProjectCard({title:'title', description:'description', link:'link'}));
+    this.reactSvc.renderReactComponent(projects, ProjectCard({title:'title', description:'description', link:'link', btnTxt:'Dashboard', btnTxt2:'Ecomerce', projectNumber:'1'}));
   }    
 
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+
   
 }
