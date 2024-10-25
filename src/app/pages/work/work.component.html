@@ -1,25 +1,33 @@
 <section id="PresentCard" class="h-screen">
   <div class="h-2/3 border w-10/12 mx-auto">
-    <div
-      class=""
-    >
-      <h2 class="animate__animated animate__backInLeft md:text-8xl xl:text-8xl sm:text-6xl text-4xl px-10 mt-20">
+    <div class="">
+      <h2
+        class="animate__animated animate__backInLeft md:text-8xl xl:text-8xl sm:text-6xl text-4xl px-10 mt-32"
+      >
         {{ helloTitle }}
       </h2>
-      <p class="animate__animated animate__backInLeft md:text-6xl xl:text-6xl sm:text-6xl text-2xl px-10 mt-20">
+      <p
+        class="animate__animated animate__backInLeft md:text-6xl xl:text-6xl sm:text-6xl text-2xl px-10 mt-20"
+      >
         {{ helloSubtitle }}
       </p>
     </div>
   </div>
   <!-- Contenido -->
-   <div class="mx-auto w-full justify-center flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-  </svg>
-  </div>
+  <!-- <div
+    class="animate__animated animate__bounceIn absolute bottom-10 left-1/2 transform -translate-x-1/2 mb-2">
+    <app-arrow-down-button [section]="'inicio'"/>
+  </div> -->
 </section>
 
 <section id="inicio" class="h-screen">
   <h2>Inicio</h2>
+
+  <div
+  class="animate__animated animate__bounceIn absolute bottom-10 left-1/2 transform -translate-x-1/2 mb-2"
+>
+  <app-arrow-down-button [section]="'inicio'"/>
+</div>
   <!-- Contenido -->
 </section>
 

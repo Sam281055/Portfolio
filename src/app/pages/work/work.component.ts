@@ -4,14 +4,13 @@ import { checkLanguageService } from '../../service/checkLanguage.service';
 import 'animate.css';
 import ProjectDashboard from '../../react/components/test.component';
 import ProjectCard from '../../react/components/project.component';
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
 import { ReactService } from '../../service/react.service';
+import { ArrowDownButtonComponent } from '../../components/arrow-down-button/arrow-down-button.component';
 
 @Component({
   selector: 'app-work',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ArrowDownButtonComponent],
   templateUrl: './work.component.html',
   styleUrl: './work.component.css',
 })
@@ -49,5 +48,12 @@ export class WorkComponent implements OnInit, AfterViewInit {
     this.reactSvc.renderReactComponent(container, ProjectDashboard());
     this.reactSvc.renderReactComponent(projects, ProjectCard({title:'title', description:'description', link:'link'}));
   }    
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   
 }
