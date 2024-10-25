@@ -21,13 +21,6 @@
   </div>
 </section>
 
-<!-- <section id="inicio" class="h-screen"> -->
-<!-- <h2>Inicio</h2> -->
-
-<!-- Contenido -->
-<!-- </section> -->
-
-<!-- Sección Proyectos -->
 <div *ngFor="let item of projects">
   <section
     id="{{ item.idSection }}"
@@ -35,7 +28,6 @@
   >
     <div class="text-center">
       <app-project-card
-        class="animate-card"
         [projectNumber]="item.projectNumber"
         [title]="item.title"
         [btnTxt]="item.btnTxt"
@@ -45,16 +37,9 @@
         [link]="item.link"
       />
       <app-arrow-down-button
-        class="animate-arrow"
+        
         [section]="item.sectionRedirect"
       />
     </div>
   </section>
 </div>
-
-<!-- Sección Contacto -->
-<section id="contacto" class="h-screen">
-  <!-- Contenido -->
-  <h2>Contacto</h2>
-  <app-arrow-down-button [section]="'footer'" />
-</section>

@@ -52,7 +52,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
           description: "A Ecomerce design width Next.js",
           imgPath: "/Ecomerce 2.png",
           link:"https://inventory-management-dashboard-orcin.vercel.app/",
-          sectionRedirect: "contacto",
+          sectionRedirect: "footer",
           idSection: "Ecomerce2"
          }
       ]
@@ -78,7 +78,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
           description: "Ecomerce hecho con Next.js",
           imgPath: "/Ecomerce 2.png",
           link:"https://inventory-management-dashboard-orcin.vercel.app/",
-          sectionRedirect: "contacto",
+          sectionRedirect: "footer",
           idSection:"Ecomerce2"
          }
       ]
