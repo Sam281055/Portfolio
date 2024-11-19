@@ -3,7 +3,7 @@ name: Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - main  # O la rama en la que quieras desplegar
+      - feature/Master
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'  # Puedes usar la versión de Node.js que necesites
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
