@@ -28,7 +28,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/portfolio/browser/  # Aquí debe ir el nombre de tu proyecto
+        publish_dir: ./dist/browser  # Aquí debe ir el nombre de tu proyecto
 
     - name: Clear cache (Optional)
       uses: actions/cache@v3
