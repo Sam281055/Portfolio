@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-project-card',
@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.css',
 })
-export class ProjectCardComponent{
+export class ProjectCardComponent implements OnDestroy{
   @Input() title!: string;
   @Input() projectNumber!: string;
   @Input() btnTxt!: string;
@@ -16,5 +16,8 @@ export class ProjectCardComponent{
   @Input() description!: string;
   @Input() link!: string;
   @Input() imgPath!: string;
-
+  ngOnDestroy(): void {
+    // Aquí puedes liberar recursos, cancelar suscripciones, etc.
+    console.log('ProjectCardComponent destroyed');
+  }
 }

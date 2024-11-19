@@ -1,34 +1,39 @@
 <div
-  class="w-10/12 mx-auto border h-[85vh] animate__animated animate__fadeInDown"
+  class="mx-auto border h-[85vh] w-11/12 sm:w-full md:w-10/12 lg:w-8/12 animate__animated animate__fadeInDown"
 >
-  <div class="flex">
-    <div class="w-1/2 flex flex-col text-start">
-      <p class="text-2xl ml-10 mt-4">{{ projectNumber }}</p>
-      <h4 class="text-4xl ml-10 my-1">{{ title }}</h4>
+  <!-- Encabezado -->
+  <div class="flex flex-col md:flex-row">
+    <!-- Columna izquierda -->
+    <div class="w-full md:w-1/2 flex flex-col text-start">
+      <p class="text-2xl ml-5 md:ml-10 mt-4">{{ projectNumber }}</p>
+      <h4 class="text-3xl md:text-4xl ml-5 md:ml-10 my-1">{{ title }}</h4>
     </div>
-    <div class="w-1/2 flex flex-col">
-      <div class="flex justify-end mt-4">
+    <!-- Columna derecha -->
+    <div class="w-full md:w-1/2 flex flex-col">
+      <div class="flex justify-center md:justify-end mt-4">
         <button
-          class="rounded-full px-10 mx-2 py-1 border bg-slate-100 hover:bg-slate-50"
+          class="rounded-full px-6 md:px-10 mx-2 py-1 border bg-slate-100 hover:bg-slate-50"
         >
           {{ btnTxt }}
         </button>
         <button
-          class="rounded-full px-10 mx-2 py-1 border bg-slate-100 hover:bg-slate-50"
+          class="rounded-full px-6 md:px-10 mx-2 py-1 border bg-slate-100 hover:bg-slate-50"
         >
           {{ btnTxt2 }}
         </button>
       </div>
-      <p class="text-xl my-2 mr-5 flex justify-end">
+      <p class="text-lg md:text-xl my-2 mr-5 flex justify-center md:justify-end">
         {{ description }}
       </p>
     </div>
   </div>
-  <div class="w-11/12 mx-auto my-auto">
+
+  <!-- Imagen -->
+  <div class="w-full mx-auto mt-4 flex justify-center">
     <a href="{{ link }}" target="_blank" class="mb-10">
       <img
         src="{{ imgPath }}"
-        class="h-auto w-auto hover:brightness-75"
+        class="h-auto max-w-full md:max-w-[80%] hover:brightness-75 mx-0 xl:mx-auto md:mx-auto sm:mx-auto"
         alt=""
       />
     </a>
