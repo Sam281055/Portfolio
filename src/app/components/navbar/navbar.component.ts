@@ -6,11 +6,10 @@ import { utilService } from '../../service/utils.service';
 import { Route, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule, LanguageSelectorComponent],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+    selector: 'app-navbar',
+    imports: [CommonModule, LanguageSelectorComponent],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
   

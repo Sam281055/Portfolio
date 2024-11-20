@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-arrow-down-button',
-  standalone: true,
-  imports: [],
-  templateUrl: './arrow-down-button.component.html',
-  styleUrl: './arrow-down-button.component.css'
+    selector: 'app-arrow-down-button',
+    imports: [],
+    templateUrl: './arrow-down-button.component.html',
+    styleUrl: './arrow-down-button.component.css'
 })
 export class ArrowDownButtonComponent {
   @Input() section!:string;

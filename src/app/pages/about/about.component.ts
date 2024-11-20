@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { checkLanguageService } from '../../service/checkLanguage.service';
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+    selector: 'app-about',
+    imports: [],
+    templateUrl: './about.component.html',
+    styleUrl: './about.component.css'
 })
 export class AboutComponent {
 

@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'app-project-card',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './project-card.component.html',
-  styleUrl: './project-card.component.css',
+    selector: 'app-project-card',
+    imports: [CommonModule],
+    templateUrl: './project-card.component.html',
+    styleUrl: './project-card.component.css'
 })
 export class ProjectCardComponent implements OnDestroy{
   @Input() title!: string;

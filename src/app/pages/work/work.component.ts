@@ -15,11 +15,10 @@ import { Project } from '../../interfaces/project.interface';
 import ScrollReveal from 'scrollreveal';
 
 @Component({
-  selector: 'app-work',
-  standalone: true,
-  imports: [CommonModule, ArrowDownButtonComponent, ProjectCardComponent],
-  templateUrl: './work.component.html',
-  styleUrl: './work.component.css',
+    selector: 'app-work',
+    imports: [CommonModule, ArrowDownButtonComponent, ProjectCardComponent],
+    templateUrl: './work.component.html',
+    styleUrl: './work.component.css'
 })
 export class WorkComponent implements OnInit, AfterViewInit {
   language = '';

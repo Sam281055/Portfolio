@@ -12,7 +12,6 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "allowSyntheticDefaultImports":true,
     "emitDecoratorMetadata":true,
     "forceConsistentCasingInFileNames":true,
     "esModuleInterop": true,
