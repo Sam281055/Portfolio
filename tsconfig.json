@@ -3,7 +3,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "jsx": "react-jsx",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -28,19 +27,18 @@
     ],
     "paths": {
       "@angular/*": ["../node_modules/@angular/*"],
-      "@react/*": ["../node_modules/react/*"]
     }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "enableExperimentalFeatures": true
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.jsx"
   ],
   "exclude": ["node_modules", "dist"]
 }

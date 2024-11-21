@@ -7,6 +7,6 @@ export interface Project {
     imgPath: string,
     link: string,
     sectionRedirect:string,
-    idSection:string
+    idSection:string,
   }
   

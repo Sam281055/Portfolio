@@ -21,24 +21,27 @@
   </div>
 </section>
 
-<div *ngFor="let item of projects">
-  <section
-    id="{{ item.idSection }}"
-    class="h-screen w-11/12 mx-auto flex items-center justify-center section reveal section1"
+    <div *ngFor="let item of projects" >
 
-  >
-    <div class="text-center">
-        <app-project-card
-          [projectNumber]="item.projectNumber"
-          [title]="item.title"
-          [btnTxt]="item.btnTxt"
-          [btnTxt2]="item.btnTxt2"
-          [description]="item.description"
-          [imgPath]="item.imgPath"
-          [link]="item.link"
-        />
-
-      <app-arrow-down-button [section]="item.sectionRedirect" />
+      <section
+        id="{{ item.idSection }}"
+        class="h-screen w-11/12 mx-auto flex items-center justify-center section reveal section1">
+  
+        <div class="text-center">
+            <app-project-card
+              [projectNumber]="item.projectNumber"
+              [title]="item.title"
+              [btnTxt]="item.btnTxt"
+              [btnTxt2]="item.btnTxt2"
+              [description]="item.description"
+              [imgPath]="item.imgPath"
+              [link]="item.link"
+            />
+    
+          <app-arrow-down-button [section]="item.sectionRedirect" />
+        </div>
+  
+      </section>
+  
     </div>
-  </section>
-</div>
+  

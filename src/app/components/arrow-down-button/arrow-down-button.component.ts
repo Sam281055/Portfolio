@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-arrow-down-button',
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './arrow-down-button.component.html',
-    styleUrl: './arrow-down-button.component.css'
+    styleUrl: './arrow-down-button.component.css',
+    standalone: true
 })
 export class ArrowDownButtonComponent {
   @Input() section!:string;

@@ -3,7 +3,9 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   OnInit,
+  Output,
   QueryList,
   ViewChildren,
 } from '@angular/core';
@@ -18,7 +20,8 @@ import ScrollReveal from 'scrollreveal';
     selector: 'app-work',
     imports: [CommonModule, ArrowDownButtonComponent, ProjectCardComponent],
     templateUrl: './work.component.html',
-    styleUrl: './work.component.css'
+    styleUrl: './work.component.css',
+    standalone: true
 })
 export class WorkComponent implements OnInit, AfterViewInit {
   language = '';
@@ -26,15 +29,12 @@ export class WorkComponent implements OnInit, AfterViewInit {
   helloSubtitle = '';
   projects: Project[] = [];
   @ViewChildren('sectionElement') sectionElements!: QueryList<ElementRef>;
-  constructor(
-    private checkLanguageSvc: checkLanguageService,
-    private el: ElementRef
-  ) {}
 
   ngOnInit(): void {
     this.language = this.checkLanguageSvc.check();
     this.setValues();
   }
+  constructor(private checkLanguageSvc:checkLanguageService){}
   ngAfterViewInit(): void {
     this.initScrollReveal();
   }
@@ -65,6 +65,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
           link: 'https://inventory-management-dashboard-orcin.vercel.app/',
           sectionRedirect: 'footer',
           idSection: 'Ecomerce2',
+
         },
       ];
     } else if (this.language == 'ES') {
@@ -81,6 +82,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
           link: 'https://sam281055.github.io/ecomerce/',
           sectionRedirect: 'Ecomerce2',
           idSection: 'inicio',
+
         },
         {
           projectNumber: '02',
@@ -92,6 +94,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
           link: 'https://inventory-management-dashboard-orcin.vercel.app/',
           sectionRedirect: 'footer',
           idSection: 'Ecomerce2',
+
         },
       ];
     }
@@ -119,4 +122,5 @@ export class WorkComponent implements OnInit, AfterViewInit {
       });
     }, 0); // El timeout asegura que el DOM esté listo
   }
+
 }
