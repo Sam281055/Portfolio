@@ -1,14 +1,45 @@
-<section class="md:flex sm:flex xl:flex col my-10">
-    <div class="xl:w-1/2 md:w-1/2 sm:w-1/2 w-full">
-        <img class="mx-auto h-[80vh] md:w-auto xl:w-auto w-10/12" src="/Sam.png" alt="">
+<section class="md:min-h-[90vh] h-auto flex flex-col md:flex-row items-center">
+
+  <!-- Imagen -->
+  <div class="w-full md:w-1/2 flex justify-center">
+    <img
+      class="animate__animated animate__backInLeft 
+             md:h-[60vh] h-auto w-10/12 md:w-auto 
+             scale-x-[-1]"
+      src="https://res.cloudinary.com/dcrbdm4i2/image/upload/v1774824140/SamDefault_igr8a6.png"
+      alt=""
+    />
+  </div>
+
+  <!-- Texto -->
+  <div class="w-full md:w-1/2 flex justify-center">
+    <div class="mt-10 md:mt-[15vh] w-11/12 md:w-8/12">
+
+      <h1
+        class="animate__animated animate__backInRight 
+               md:text-4xl text-xl font-bold text-white"
+      >
+        {{ hello }}
+      </h1>
+
+      <p
+        class="animate__animated animate__backInRight 
+               break-words mt-5 md:text-2xl text-sm text-white"
+      >
+        {{ descripcion }}
+      </p>
+
     </div>
-    <div class="xl:w-1/2 md:w-1/2 sm:w-1/2 w-full">
-        <div class="xl:mt-[15vh] md:mt-[15vh] mt-[5vh] xl:mx-0 md:mx-0 sm:mx-auto mx-auto xl:w-8/12 md:w-8/12 sm:w-8/12 w-11/12">
-            <h1 class="text-4xl font-bold mx-auto">{{hello}}</h1>
-        <p class="break-words mt-[3vh] text-2xl">
-            {{descripcion}}
-        </p>
-        </div>
-    </div>
+  </div>
 
 </section>
+
+<!-- Arrow -->
+<div class="flex justify-center mt-10">
+  <app-arrow-down-button
+    class="md:block hidden"
+    [section]="'experience'"
+  />
+</div>
+
+<app-experience id="experience"></app-experience>

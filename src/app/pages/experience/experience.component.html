@@ -1,0 +1,61 @@
+<h3 class="text-4xl font-bold py-10 md:w-10/12 w-11/12 mx-auto text-white">
+  {{ experienceLabel }}
+</h3>
+
+<section class="relative md:w-10/12 w-11/12 mx-auto space-y-10 mb-20">
+
+  <!-- Glow global -->
+  <div class="absolute w-40 h-40 bg-blue-500 opacity-10 blur-3xl rounded-full top-0 right-0 pointer-events-none"></div>
+
+  @for (item of workExperients; track $index) {
+
+    <div class="relative p-6 
+                bg-white/5 backdrop-blur-lg 
+                border border-white/10 
+                rounded-xl shadow-lg 
+                hover:border-blue-500/30 transition">
+
+      <!-- Glow interno -->
+      <div class="absolute w-40 h-40 bg-blue-500 opacity-10 rounded-full top-0 right-0 pointer-events-none"></div>
+
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+
+        <div class="text-2xl font-semibold text-white">
+          {{ item.title }}
+        </div>
+
+        <div class="text-sm text-blue-300">
+          {{
+            item.startDate +
+            " - " +
+            (item.isCurrent
+              ? language === "EN"
+                ? "Present"
+                : "Actualidad"
+              : item.endDate)
+          }}
+        </div>
+
+      </div>
+
+      <!-- Posición -->
+      <div class="text-lg text-blue-200 mt-1 font-medium">
+        {{ item.position }}
+      </div>
+
+      <!-- Lista -->
+      <ul class="mt-4 space-y-2">
+        @for (doTo of item.listDo; track $index) {
+          <li class="text-gray-300 flex items-start gap-2">
+            <span class="text-blue-400 mt-1">•</span>
+            <span class="break-words">{{ doTo }}</span>
+          </li>
+        }
+      </ul>
+
+    </div>
+
+  }
+
+</section>

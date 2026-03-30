@@ -11,9 +11,19 @@ import { Component, Input } from '@angular/core';
 export class ArrowDownButtonComponent {
   @Input() section!:string;
   scrollToSection() {
-    const element = document.getElementById(this.section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const element = document.getElementById(this.section);
+
+  if (element) {
+    const navbarOffset = 80;
+
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+
+    const offsetPosition = elementPosition - navbarOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
+}
 }

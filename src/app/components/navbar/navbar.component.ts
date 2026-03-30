@@ -3,7 +3,7 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { itemNavbar } from '../../interfaces/items.interface';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { utilService } from '../../service/utils.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -52,12 +52,12 @@ export class NavbarComponent implements OnInit {
     this.toggleModal();
   }
 
-  resumeLink = 'https://drive.google.com/file/d/1BZOFLjePK3SQPlL715bl0cZqJhG6vVFv/view?usp=drive_link';
+  resumeLink = 'https://drive.google.com/file/d/1enStBLdamU90aUnCkGuG5Xqw0gp-6_nR/view?usp=drive_link';
   resumeText = 'Resume';
   isModalOpen = false;
   isMobile = false;
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.checkScreenSize();
   }

@@ -1,4 +1,13 @@
-<select class="px-2 my-auto border-none"(change)="changeLanguage($event)" [value]="language">
-    <option value="EN">EN</option>
-    <option value="ES">ES</option>
+<select 
+  class="px-3 py-1 rounded-lg 
+         bg-white/5 backdrop-blur-md 
+         border border-white/10 
+         text-white text-sm 
+         focus:outline-none focus:ring-2 focus:ring-blue-500 
+         hover:bg-white/10 transition cursor-pointer"
+  (change)="changeLanguage($event)" 
+  [value]="language"
+>
+  <option value="EN" class="bg-slate-900 text-white">EN</option>
+  <option value="ES" class="bg-slate-900 text-white">ES</option>
 </select>

@@ -3,9 +3,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  EventEmitter,
   OnInit,
-  Output,
   QueryList,
   ViewChildren,
 } from '@angular/core';

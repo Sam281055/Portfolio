@@ -1,4 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ========================= */
+/* BASE GLOBAL (MUY IMPORTANTE) */
+/* ========================= */
+
+html, body {
+  @apply min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900;
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* COMPONENTS */
+/* ========================= */
+
+@layer components {
+
+  /* Background principal */
+  .bg-main {
+    @apply relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden;
+  }
+
+  /* Glow */
+  .bg-glow {
+    @apply absolute rounded-full blur-3xl opacity-20 pointer-events-none;
+  }
+
+  .bg-glow-blue {
+    @apply bg-blue-500 w-[500px] h-[500px] top-[-100px] left-[-100px];
+  }
+
+  .bg-glow-indigo {
+    @apply bg-indigo-500 w-[400px] h-[400px] bottom-[-100px] right-[-100px];
+  }
+
+  /* Glass card */
+  .card-glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl;
+  }
+
+  /* Textos */
+  .text-title {
+    @apply text-white font-semibold;
+  }
+
+  .text-subtitle {
+    @apply text-blue-200;
+  }
+
+  /* Grid tech */
+  .bg-grid {
+    background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+  }
+
+}
