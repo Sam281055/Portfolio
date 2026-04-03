@@ -10,25 +10,24 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/platform-browser-dynamic": "^19.0.0",
-    "@angular/router": "^19.0.0",
+    "@angular/animations": "^20.3.18",
+    "@angular/common": "^20.3.18",
+    "@angular/compiler": "^20.3.18",
+    "@angular/core": "^20.3.18",
+    "@angular/forms": "^20.3.18",
+    "@angular/platform-browser": "^20.3.18",
+    "@angular/platform-browser-dynamic": "^20.3.18",
+    "@angular/router": "^20.3.18",
     "animate.css": "^4.1.1",
-    "ngx-scrollspy": "^1.2.1",
     "rxjs": "~7.8.0",
     "scrollreveal": "^4.0.9",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.0",
-    "@angular/cli": "^19.0.0",
-    "@angular/compiler-cli": "^19.0.0",
+    "@angular-devkit/build-angular": "^20.3.0",
+    "@angular/cli": "^21.2.6",
+    "@angular/compiler-cli": "^20.3.18",
     "@types/jasmine": "~5.1.0",
     "@types/scrollreveal": "^0.0.11",
     "autoprefixer": "^10.4.20",
@@ -40,6 +39,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3"
+    "typescript": "~5.9.0"
   }
 }
