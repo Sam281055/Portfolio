@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
   }
 
   set(language:string){
-    if(language === 'EN'){
+    if(language === 'en'){
       this.Items = [
         {title: 'Works', rout:'/work'},
         {title: 'About', rout:'/about'},
@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit {
       this.resume="Resume";
 
     }
-    else if(language === 'ES'){
+    else if(language === 'es'){
       this.Items = [
         {title: 'Proyectos', rout:'/work'},
         {title: 'Sobre mi', rout:'/about'},

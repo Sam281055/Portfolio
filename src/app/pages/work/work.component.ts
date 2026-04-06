@@ -8,11 +8,13 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { checkLanguageService } from '../../service/checkLanguage.service';
-import 'animate.css';
 import { ArrowDownButtonComponent } from '../../components/arrow-down-button/arrow-down-button.component';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { Project } from '../../interfaces/project.interface';
 import ScrollReveal from 'scrollreveal';
+import { WorkService } from '../../service/work.service';
+import { StrapiResponse } from '../../interfaces/strapi-response.interface';
+import { WorkData } from '../../interfaces/work-data.interface';
 
 @Component({
     selector: 'app-work',
@@ -23,85 +25,37 @@ import ScrollReveal from 'scrollreveal';
 })
 export class WorkComponent implements OnInit, AfterViewInit {
   language = '';
-  helloTitle = '';
-  helloSubtitle = '';
+  helloTitle:String = '';
+  helloSubtitle:String = '';
   projects: Project[] = [];
   @ViewChildren('sectionElement') sectionElements!: QueryList<ElementRef>;
 
   ngOnInit(): void {
-    this.language = this.checkLanguageSvc.check();
-    this.setValues();
+    this.setValues(this.checkLanguageSvc.check());
   }
-  constructor(private checkLanguageSvc:checkLanguageService){}
+  constructor(
+    private checkLanguageSvc:checkLanguageService,
+    private workSvc:WorkService
+  ){}
   ngAfterViewInit(): void {
     this.initScrollReveal();
   }
 
-  setValues() {
-    if (this.language == 'EN') {
-      this.helloTitle = "Hello i'm Sam";
-      this.helloSubtitle = 'FullStack Developer';
-      this.projects = [
-        {
-          projectNumber: '01',
-          title: 'Ecomerce',
-          btnTxt: 'Angular',
-          btnTxt2: 'Landing Page',
-          description: 'A Ecomerce design width Angular',
-          imgPath: '/Ecomerce.jpeg',
-          link: 'https://sam281055.github.io/ecomerce/',
-          sectionRedirect: 'Ecomerce2',
-          idSection: 'inicio',
-        },
-        {
-          projectNumber: '02',
-          title: 'Ecomerce',
-          btnTxt: 'Next.js',
-          btnTxt2: 'Ecomerce',
-          description: 'A Ecomerce design width Next.js',
-          imgPath: '/Ecomerce 2.png',
-          link: 'https://inventory-management-dashboard-orcin.vercel.app/',
-          sectionRedirect: 'footer',
-          idSection: 'Ecomerce2',
+  setValues(language:String) {
+    
+    this.workSvc.getProyects(language).subscribe((a:StrapiResponse<Project>)=>{
+      this.projects = a.data;
+    });
 
-        },
-      ];
-    } else if (this.language == 'ES') {
-      this.helloTitle = 'Hola soy Sam';
-      this.helloSubtitle = 'FullStack Developer';
-      this.projects = [
-        {
-          projectNumber: '01',
-          title: 'Ecomerce',
-          btnTxt: 'Angular',
-          btnTxt2: 'Landing Page',
-          description: 'Ecomerce personalizado hecho con Angular',
-          imgPath: '/Ecomerce.jpeg',
-          link: 'https://sam281055.github.io/ecomerce/',
-          sectionRedirect: 'Ecomerce2',
-          idSection: 'inicio',
-
-        },
-        {
-          projectNumber: '02',
-          title: 'Ecomerce',
-          btnTxt: 'Next.js',
-          btnTxt2: 'Ecomerce',
-          description: 'Ecomerce hecho con Next.js',
-          imgPath: '/Ecomerce 2.png',
-          link: 'https://inventory-management-dashboard-orcin.vercel.app/',
-          sectionRedirect: 'footer',
-          idSection: 'Ecomerce2',
-
-        },
-      ];
-    }
+    this.workSvc.getWorkData(language).subscribe((a:StrapiResponse<WorkData>)=>{
+      this.helloTitle = a.data[0].helloTitle;
+      this.helloSubtitle = a.data[0].helloSubtitle;
+    })
   }
 
   initScrollReveal() {
     const sr = ScrollReveal();
 
-    // Asegúrate de que los elementos están disponibles en el DOM
     setTimeout(() => {
       this.sectionElements.forEach((element) => {
         sr.reveal(element.nativeElement, {
@@ -118,7 +72,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
           }
         });
       });
-    }, 0); // El timeout asegura que el DOM esté listo
+    }, 0);
   }
 
 }

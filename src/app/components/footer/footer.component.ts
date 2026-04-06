@@ -20,11 +20,11 @@ export class FooterComponent implements OnInit {
   }
 
   setValues() {
-    if(this.language == "EN"){
+    if(this.language == "en"){
       this.title = "Let’s Build Something Together";
       this.social = "Social";
     }
-    else if(this.language == "ES"){
+    else if(this.language == "es"){
       this.title = "Desarrollemos algo juntos!";
       this.social = "Redes Sociales";
     }
