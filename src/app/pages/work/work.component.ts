@@ -28,6 +28,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
   helloTitle:String = '';
   helloSubtitle:String = '';
   projects: Project[] = [];
+  img:String="";
   @ViewChildren('sectionElement') sectionElements!: QueryList<ElementRef>;
 
   ngOnInit(): void {
@@ -48,8 +49,10 @@ export class WorkComponent implements OnInit, AfterViewInit {
     });
 
     this.workSvc.getWorkData(language).subscribe((a:StrapiResponse<WorkData>)=>{
-      this.helloTitle = a.data[0].helloTitle;
-      this.helloSubtitle = a.data[0].helloSubtitle;
+      const data = a.data[0];
+      this.helloTitle = data.helloTitle;
+      this.helloSubtitle = data.helloSubtitle;
+      this.img=data.img;
     })
   }
 

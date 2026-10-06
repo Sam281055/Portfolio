@@ -3,7 +3,6 @@ import { checkLanguageService } from '../../service/checkLanguage.service';
 import { ExperienceComponent } from '../experience/experience.component';
 import { ArrowDownButtonComponent } from '../../components/arrow-down-button/arrow-down-button.component';
 import { AboutService } from '../../service/about.service';
-import { WorkExperience } from '../../interfaces/work-experience.interface';
 import { StrapiResponse } from '../../interfaces/strapi-response.interface';
 import { About } from '../../interfaces/about.interface';
 
@@ -19,7 +18,7 @@ export class AboutComponent {
   
   hello:String = "";
   language = "";
-
+  img:String="";
   constructor(
     private checkLanguageSvc: checkLanguageService,
     private aboutSvc: AboutService
@@ -32,8 +31,7 @@ export class AboutComponent {
 
   setValues(language:String) {
     this.aboutSvc.getAboutData(language).subscribe((a:StrapiResponse<About>)=>{
-      console.log(a);
-      
+      this.img="https://res.cloudinary.com/dcrbdm4i2/image/upload/v1774824140/SamDefault_igr8a6.png";
       this.hello = a.data[0].hello;
       this.descripcion = a.data[0].descripcion;
     })

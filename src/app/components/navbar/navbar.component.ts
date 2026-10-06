@@ -4,6 +4,9 @@ import { itemNavbar } from '../../interfaces/items.interface';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { utilService } from '../../service/utils.service';
 import { Router } from '@angular/router';
+import { NavbarService } from '../../service/navbar.service';
+import { StrapiResponse } from '../../interfaces/strapi-response.interface';
+import { NavbarData } from '../../interfaces/navbar-data.interface';
 
 @Component({
     selector: 'app-navbar',
@@ -17,11 +20,14 @@ export class NavbarComponent implements OnInit {
   
   Items: itemNavbar[] = [];
   isModal: boolean = false;
-  resume=""
-
+  resumeLink:String="";
+  resume:String="";
+  logo:String="./LOGO.png";
+  title:String="";
   constructor(
     private utilSvc:utilService,
-    private router:Router
+    private router:Router,
+    private navSvc:NavbarService
   ){}
 
   ngOnInit(): void {
@@ -30,21 +36,14 @@ export class NavbarComponent implements OnInit {
   }
 
   set(language:string){
-    if(language === 'en'){
-      this.Items = [
-        {title: 'Works', rout:'/work'},
-        {title: 'About', rout:'/about'},
-      ]
-      this.resume="Resume";
-
-    }
-    else if(language === 'es'){
-      this.Items = [
-        {title: 'Proyectos', rout:'/work'},
-        {title: 'Sobre mi', rout:'/about'},
-      ]
-      this.resume="Resumen";
-    }
+    this.navSvc.getNavbarData(language).subscribe((a:StrapiResponse<NavbarData>)=>{
+      const data = a.data[0];
+      this.resume = data.resumeText;
+      this.resumeLink = data.resumeLink;
+      this.Items = data.items;
+      this.logo = data.logo;
+      this.title = data.title;
+    });
   }
 
   Router(rout:string){
@@ -52,8 +51,7 @@ export class NavbarComponent implements OnInit {
     this.toggleModal();
   }
 
-  resumeLink = 'https://drive.google.com/file/d/1enStBLdamU90aUnCkGuG5Xqw0gp-6_nR/view?usp=drive_link';
-  resumeText = 'Resume';
+
   isModalOpen = false;
   isMobile = false;
 

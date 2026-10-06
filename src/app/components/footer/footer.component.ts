@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { checkLanguageService } from '../../service/checkLanguage.service';
+import { FooterService } from '../../service/footer.service';
+import { StrapiResponse } from '../../interfaces/strapi-response.interface';
+import { footerData } from '../../interfaces/footer.interface';
 
 @Component({
     selector: 'app-footer',
@@ -8,11 +11,16 @@ import { checkLanguageService } from '../../service/checkLanguage.service';
     styleUrl: './footer.component.css'
 })
 export class FooterComponent implements OnInit {
-  title = '';
-  social = '';
-  mail = 'SL281055@gmail.com';
+  title:String = '';
+  social:String = '';
+  mail:String = '';
   language = '';
-  constructor(private checkLanguageSvc: checkLanguageService) {}
+  linkedin:String='';
+  cv:String='';
+  constructor(
+    private checkLanguageSvc: checkLanguageService,
+    private footerSvc: FooterService
+  ) {}
 
   ngOnInit() {
     this.language = this.checkLanguageSvc.check();
@@ -20,13 +28,13 @@ export class FooterComponent implements OnInit {
   }
 
   setValues() {
-    if(this.language == "en"){
-      this.title = "Let’s Build Something Together";
-      this.social = "Social";
-    }
-    else if(this.language == "es"){
-      this.title = "Desarrollemos algo juntos!";
-      this.social = "Redes Sociales";
-    }
+    this.footerSvc.getFooterData(this.language).subscribe((a:StrapiResponse<footerData>)=>{
+      const data = a.data[0];
+      this.title = data.title;
+      this.social = data.social;
+      this.mail = data.mail;
+      this.linkedin = data.linkedinUrl;
+      this.cv = data.cvUrl;
+    });
   }
 }
